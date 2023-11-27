@@ -2,7 +2,7 @@
 
 VAL_DATA=${1}
 
-for line in `cat known_sources`
+for line in `cat ${PWD}/known_sources`
 do
   if [ ${VAL_DATA} == ${line} ]
   then
