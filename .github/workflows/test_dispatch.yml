@@ -22,7 +22,7 @@ jobs:
           git config --local user.name "myname"
           git config --local user.email "myemail@email.com"
           git add .
-          git commit -m "Add content in registry from repository: ${{ github.event.client_payload.repository_name }}"
+          git commit -m "Add content in registry for module: ${{ github.event.client_payload.module_name }}"
           git push
       - name: Final step
         run: |
