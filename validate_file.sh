@@ -7,7 +7,7 @@ do
   if [ ${VAL_DATA} == ${line} ]
   then
     touch metadata.file
-    echo ${line} > metadata.file
+    echo ${line} >> metadata.file
   else
     echo "Module not configured in known_sources."
     echo "Please contact us: THE GUYS to help you configure your repo in known_sources."
