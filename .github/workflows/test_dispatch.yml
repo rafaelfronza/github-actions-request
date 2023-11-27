@@ -16,11 +16,13 @@ jobs:
         run: 'echo  "Metadata is: ${{ github.event.client_payload.module_name }}"'
       - name: Run script from repo
         run: 'chmod +x ${PWD}/validate_file.sh && ${PWD}/validate_file.sh ${{ github.event.client_payload.module_name }} ${{ github.event.client_payload.repository_name }}'
-      - name: Run git commands
-        run: |
-          git add .
-          git commit -m "Add content in registry from repository: ${{ github.event.client_payload.repository_name }}"
-      - name: Final step
-        run: |
-          echo "Final step -- module name: ${{ github.event.client_payload.module_name }}"
-          echo "Final step -- repository name: ${{ github.event.client_payload.repository_name }}"
+      #- name: Run git commands
+      #  run: |
+      #    git --config user.name "myname"
+      #    git --config user.email "myemail@email.com"
+      #    git add .
+      #    git commit -m "Add content in registry from repository: ${{ github.event.client_payload.repository_name }}"
+      #- name: Final step
+      #  run: |
+      #    echo "Final step -- module name: ${{ github.event.client_payload.module_name }}"
+      #    echo "Final step -- repository name: ${{ github.event.client_payload.repository_name }}"
