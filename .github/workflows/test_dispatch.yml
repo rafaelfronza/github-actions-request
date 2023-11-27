@@ -19,8 +19,8 @@ jobs:
         #run: 'chmod +x validate_file.sh && ./validate_file.sh ${{ github.event.client_payload.module_name }} ${{ github.event.client_payload.repository_name }}'
       - name: Run git commands
         run: |
-          git --config user.name "myname"
-          git --config user.email "myemail@email.com"
+          git config --local user.name "myname"
+          git config --local user.email "myemail@email.com"
           git add .
           git commit -m "Add content in registry from repository: ${{ github.event.client_payload.repository_name }}"
       - name: Final step
