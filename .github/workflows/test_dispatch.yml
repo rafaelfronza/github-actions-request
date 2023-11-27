@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Do something based on manual trigger (CURL)
-        run: 'echo  "Metadata is: ${{ github.event.module_metadata.text }}"'
+        run: 'echo  "Metadata is: ${{ github.event.client_payload.text }}"'
