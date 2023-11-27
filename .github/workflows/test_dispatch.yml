@@ -14,7 +14,7 @@ jobs:
       - name: Do something based on manual trigger (CURL)
         run: 'echo  "Metadata is: ${{ github.event.client_payload.module_name }}"'
       - name: Run script from repo
-        run: 'chmod +x validate_file.sh && ./validate_file.sh ${{ github.event.client_payload.module_name }} ${{ github.event.client_payload.repository_name }}'
+        run: 'chmod +x ${PWD}/validate_file.sh && ${PWD}/validate_file.sh ${{ github.event.client_payload.module_name }} ${{ github.event.client_payload.repository_name }}'
       - name: Run git commands
         run: |
           git add .
