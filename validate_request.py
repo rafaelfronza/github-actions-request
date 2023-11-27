@@ -1,6 +1,9 @@
 import sys
 from pathlib import Path
 
+class SourceConfigurationError(Exception):
+    pass
+
 def create_file(module):
     filename = "metadata." + module + ".file"
     with open(filename, "w") as wfile:
@@ -15,7 +18,9 @@ def check_in_known_sources(known_sources, module):
     if module in known_list:
         create_file(module)
     else:
-        raise("Module: " + module + "not configured in known_sources. Please configure.")
+        raise SourceConfigurationError(
+            "Module: " + module + " not configured in known_sources. Please configure."
+        )
 
 if __name__ == "__main__":
     module = sys.argv[1]
