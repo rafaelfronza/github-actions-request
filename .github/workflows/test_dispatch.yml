@@ -11,7 +11,7 @@ jobs:
     name: Run Scheduled thing
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 # Necessary for accessing files in repository
+      - uses: actions/checkout@master # Necessary for accessing files in repository (set per branch)
       - name: Do something based on manual trigger (CURL)
         run: 'echo  "Metadata is: ${{ github.event.client_payload.module_name }}"'
       - name: Run script from repo
