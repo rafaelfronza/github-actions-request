@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4 # Necessary for accessing files in repository
       - name: Do something based on manual trigger (CURL)
-        run: 'echo  "Metadata is: ${{ github.event.client_payload.module_name }}"'
+        run: 'echo  "Metadata is: ${{ github.event.client_payload.module_name }}'
       - name: Run script from repo
         run: 'python3 validate_request.py ${{ github.event.client_payload.module_name }}"'
         #run: 'chmod +x validate_file.sh && ./validate_file.sh ${{ github.event.client_payload.module_name }} ${{ github.event.client_payload.repository_name }}'
