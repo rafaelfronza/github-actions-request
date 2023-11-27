@@ -1,0 +1,15 @@
+name: Test manually trigger GitHub Actions
+
+on:
+  repository_dispatch:
+    types: registry-update
+  # schedule:
+    # - cron: '*/5 * * * *'
+
+jobs:
+  build:
+    name: Run Scheduled thing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do something based on manual trigger (CURL)
+        run: 'echo  "Metadata is: ${{ github.event.module_metadata.text }}"'
